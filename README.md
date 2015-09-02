@@ -72,7 +72,7 @@ currently on hiatus, but Symbola is still
 from an
 [older snapshot of that page](https://web.archive.org/web/20150625033347/http://users.teilar.gr/~g1951d/). Symbola
 may also be available from your preferred Linux distribution. For
-example, Fedora packages this font as the
+example, Fedora provides this font as the
 [`gdouros-symbola-fonts` package](http://fedoraproject.org/wiki/Gdouros_Symbola).
 
 <!-- LocalWords: Flycheck flycheck FlyC errored Milkypostman MELPA -->
