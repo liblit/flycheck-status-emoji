@@ -3,8 +3,8 @@
 `flycheck-status-emoji` replaces the standard
 [Flycheck mode-line status indicators](http://www.flycheck.org/manual/latest/Mode-line-display.html#Mode-line-display)
 with cute, compact emoji that convey the corresponding information.
-For example, a buffer shows status “😔” while being checked, then “😱”
-to report errors, “😟” to report warnings, or “😌” if no problems were
+For example, a buffer shows status `😔` while being checked, then `😱`
+to report errors, `😟` to report warnings, or `😌` if no problems were
 found. Personal tastes vary, but I find the emoji more intuitive than
 Flycheck’s native indicators, at least for the common statuses. The
 emoji indicators are also quite compact, which can be useful in a
