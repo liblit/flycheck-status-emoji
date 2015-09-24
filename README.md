@@ -31,6 +31,8 @@ indicator smartly:
 * show `😱` instead of `😱1` when there is exactly one error
 * show `😟` instead of `😟1` when there is exactly one warning
 
+Note: you may see multicolored icons for several of the emoji faces above. This is your browser’s doing. The actual Emacs package uses monochrome emoji, not colorful icons.
+
 ## Quick Start
 
 Install `flycheck-status-emoji` from the fantastic
