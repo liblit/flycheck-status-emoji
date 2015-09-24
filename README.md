@@ -47,10 +47,10 @@ then use `M-x load-library RET flycheck-status-emoji RET` to load the
 package.
 
 Now use `M-x flycheck-status-emoji-mode` to toggle this package on and
-off.  When on, you should Flycheck status using cute, compact emoji.
-When off, you will see the standard textual Flycheck status indicators
-instead.  To enable status emoji permanently, set and save the
-`flycheck-status-emoji-mode`
+off.  When on, you should see Flycheck status using cute, compact
+emoji.  When off, you will see the standard textual Flycheck status
+indicators instead.  To enable status emoji permanently, set and save
+the `flycheck-status-emoji-mode`
 [customization option](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html).
 
 ## Dependencies
