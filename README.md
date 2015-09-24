@@ -44,11 +44,14 @@ somewhere in your Emacs
 then use `M-x load-library RET flycheck-status-emoji RET` to load the
 package.
 
-No other configuration is needed. Assuming you have suitable fonts
-installed, your Emacs mode line will start reporting Flycheck status
-using cute, compact emoji rather than the standard textual indicators.
+Now use `M-x flycheck-status-emoji-mode` to toggle this package on and
+off.  When on, you should Flycheck status using cute, compact emoji.
+When off, you will see the standard textual Flycheck status indicators
+instead.  To enable status emoji permanently, set and save the
+`flycheck-status-emoji-mode`
+[customization option](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html).
 
-## Advanced Installation
+## Dependencies
 
 `flycheck-status-emoji` builds upon `flycheck-mode`; you should
 already have Flycheck installed and working before adding
@@ -56,12 +59,6 @@ already have Flycheck installed and working before adding
 [Flycheck home page](http://www.flycheck.org/) or the
 [Flycheck GitHub project page](https://github.com/flycheck/flycheck)
 for information and instructions.
-
-If you did not install from the
-[<abbr title="Milkypostman’s Emacs Lisp Package Archive">MELPA</abbr>](http://melpa.milkbox.net/#/getting-started)
-repository, add `(require 'flycheck-status-emoji)` to your
-[Emacs init file](http://www.gnu.org/software/emacs/manual/html_node/elisp/Init-File.html)
-to load `flycheck-status-emoji` whenever you start Emacs.
 
 `flycheck-status-emoji` requires suitable fonts that support the emoji
 characters we use. I recommend the Symbola font by George Douros: it

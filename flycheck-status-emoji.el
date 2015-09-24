@@ -4,7 +4,7 @@
 
 ;; Author: Ben Liblit <liblit@acm.org>
 ;; Created: 13 Aug 2015
-;; Version: 1.0
+;; Version: 1.1
 ;; Package-Requires: ((emacs "24") (flycheck "0.20") (let-alist "1.0"))
 ;; Keywords: convenience languages tools
 ;; Homepage: https://github.com/liblit/flycheck-status-emoji
@@ -115,7 +115,47 @@ fallback."
 		  pick))))
       (flycheck-mode-line-status-text status)))
 
-(setq flycheck-mode-line '(:eval (flycheck-status-emoji-mode-line-text)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;  customization
+;;
+
+(defgroup flycheck-status-emoji nil
+  "Show flycheck status using cute, compact emoji"
+  :prefix "flycheck-status-emoji-"
+  :group 'flycheck
+  :link '(url-link :tag "GitHub" "https://github.com/liblit/flycheck-status-emoji"))
+
+;;;###autoload
+(define-minor-mode flycheck-status-emoji-mode
+  "Toggle Flycheck status emoji mode.
+
+Interactively with no argument, this command toggles the mode.  A
+positive prefix argument enables the mode; any other prefix
+argument disables it.  From Lisp, argument omitted or nil enables
+the mode, while `toggle' toggles the state.
+
+When enabled, this mode replaces the standard Flycheck mode-line
+status indicators with cute, compact emoji that convey the
+corresponding information.  For example, a buffer shows status
+“😔” while being checked, then “😱” to report errors, “😟” to report
+warnings, or “😌” if no problems were found.
+
+See <https://github.com/liblit/flycheck-status-emoji#readme> for
+additional documentation.  Visit
+<https://github.com/liblit/flycheck-status-emoji/issues> or use
+command `flycheck-status-emoji-submit-bug-report' to report bugs
+or offer suggestions for improvement."
+  :global t
+  :package-version '(flycheck-status-emoji . "1.1")
+  (progn
+    (setq flycheck-mode-line
+	  (if flycheck-status-emoji-mode
+	      '(:eval (flycheck-status-emoji-mode-line-text))
+	    (eval (car (or (get 'flycheck-mode-line 'saved-value)
+			   (get 'flycheck-mode-line 'standard-value))))))
+    (force-mode-line-update t)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -123,7 +163,7 @@ fallback."
 ;;  bug reporting
 ;;
 
-(defconst flycheck-status-emoji-version "1.0"
+(defconst flycheck-status-emoji-version "1.1"
   "Package version number for use in bug reports.")
 
 (defconst flycheck-status-emoji-maintainer-address "Ben Liblit <liblit@acm.org>"
@@ -144,8 +184,10 @@ Interactively, prompts for the method to use."
       (reporter-submit-bug-report
        flycheck-status-emoji-maintainer-address
        (concat "flycheck-status-emoji.el " flycheck-status-emoji-version)
-       (list 'flycheck-last-status-change
-	     'flycheck-current-errors)))))
+       (list 'flycheck-current-errors
+	     'flycheck-last-status-change
+	     'flycheck-mode-line
+	     'flycheck-status-emoji-mode)))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   
@@ -157,6 +199,6 @@ Interactively, prompts for the method to use."
 
 
 ;; LocalWords: alist el emacs emoji flycheck github https liblit
-;; LocalWords: MERCHANTABILITY readme
+;; LocalWords: MERCHANTABILITY readme flycheck's autoload
 
 ;;; flycheck-status-emoji.el ends here
