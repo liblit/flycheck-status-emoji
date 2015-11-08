@@ -36,7 +36,7 @@ Note: you may see multicolored icons for several of the emoji faces above. This 
 ## Quick Start
 
 Install `flycheck-status-emoji` from the fantastic
-[<abbr title="Milkypostman’s Emacs Lisp Package Archive">MELPA</abbr>](http://melpa.milkbox.net/#/getting-started)
+[<abbr title="Milkypostman’s Emacs Lisp Package Archive">MELPA</abbr>](https://melpa.org/#/getting-started)
 repository:
 [![MELPA](http://melpa.org/packages/flycheck-status-emoji-badge.svg)](http://melpa.org/#/flycheck-status-emoji),
 [![MELPA Stable](http://stable.melpa.org/packages/flycheck-status-emoji-badge.svg)](http://stable.melpa.org/#/flycheck-status-emoji). Or
