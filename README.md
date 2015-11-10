@@ -63,15 +63,12 @@ already have Flycheck installed and working before adding
 for information and instructions.
 
 `flycheck-status-emoji` requires suitable fonts that support the emoji
-characters we use. I recommend the Symbola font by George Douros: it
-covers all emoji we need with a clean, consistent
-design. [Douros’s web site](http://users.teilar.gr/~g1951d/) is
-currently on hiatus, but Symbola is still
-[downloadable](https://web.archive.org/web/20150625033347/http://users.teilar.gr/~g1951d/Symbola.zip)
-from an
-[older snapshot of that page](https://web.archive.org/web/20150625033347/http://users.teilar.gr/~g1951d/). Symbola
-may also be available from your preferred Linux distribution. For
-example, Fedora provides this font as the
+characters we use. I recommend the
+[Symbola font](http://users.teilar.gr/~g1951d/Symbola.zip) by
+[George Douros](http://users.teilar.gr/~g1951d/): it covers all emoji
+we need with a clean, consistent design. Symbola may also be available
+from your preferred Linux distribution. For example, Fedora provides
+this font as the
 [`gdouros-symbola-fonts` package](http://fedoraproject.org/wiki/Gdouros_Symbola).
 
 <!-- LocalWords: Flycheck flycheck FlyC errored Milkypostman MELPA -->
