@@ -54,6 +54,57 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
+;;  customizable cast of characters
+;;
+
+(defcustom flycheck-status-emoji-indicator-running ?😔
+  "Shown when a syntax check is now running in the current buffer."
+  :group 'flycheck-status-emoji
+  :type 'character)
+
+(defcustom flycheck-status-emoji-indicator-finished-ok ?😟
+  "Shown when the current syntax check finished normally with no errors or warnings."
+  :group 'flycheck-status-emoji
+  :type 'character)
+
+(defcustom flycheck-status-emoji-indicator-finished-error ?😱
+  "Shown when the current syntax check finished normally, but with one or more errors."
+  :group 'flycheck-status-emoji
+  :type 'character)
+
+(defcustom flycheck-status-emoji-indicator-finished-warning ?😟
+  "Shown when the current syntax check finished normally, but with one or more warnings."
+  :group 'flycheck-status-emoji
+  :type 'character)
+
+(defcustom flycheck-status-emoji-indicator-not-checked ?😐
+  "Shown when the current buffer was not checked."
+  :group 'flycheck-status-emoji
+  :type 'character)
+
+(defcustom flycheck-status-emoji-indicator-no-checker ?😶
+  "Shown when automatic syntax checker selection did not find a suitable syntax checker."
+  :group 'flycheck-status-emoji
+  :type 'character)
+
+(defcustom flycheck-status-emoji-indicator-errored ?😵
+  "Shown when the current syntax check has errored."
+  :group 'flycheck-status-emoji
+  :type 'character)
+
+(defcustom flycheck-status-emoji-indicator-interrupted ?😲
+  "Shown when the current syntax check was interrupted."
+  :group 'flycheck-status-emoji
+  :type 'character)
+
+(defcustom flycheck-status-emoji-indicator-suspicious ?😒
+  "Shown when the last syntax check had a suspicious result."
+  :group 'flycheck-status-emoji
+  :type 'character)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 ;;  replacement for flycheck's standard mode-line status text
 ;;
 
@@ -99,16 +150,16 @@ fallback."
 		       (if flycheck-current-errors
 			   (let-alist (flycheck-count-errors flycheck-current-errors)
 			     (concat
-			      (flycheck-status-emoji--face-count ?😱 .error)
+			      (flycheck-status-emoji--face-count flycheck-status-emoji-indicator-finished-error .error)
 			      (when (and .error .warning) '(?/))
-			      (flycheck-status-emoji--face-count ?😟 .warning)))
-			 ?😌))
-		      (`running     ?😔)
-		      (`no-checker  ?😶)
-		      (`not-checked ?😐)
-		      (`errored     ?😵)
-		      (`interrupted ?😲)
-		      (`suspicious  ?😒))))
+			      (flycheck-status-emoji--face-count flycheck-status-emoji-indicator-finished-warning .warning)))
+			 flycheck-status-emoji-indicator-finished-ok))
+		      (`running     flycheck-status-emoji-indicator-running)
+		      (`no-checker  flycheck-status-emoji-indicator-no-checker)
+		      (`not-checked flycheck-status-emoji-indicator-not-checked)
+		      (`errored     flycheck-status-emoji-indicator-errored)
+		      (`interrupted flycheck-status-emoji-indicator-interrupted)
+		      (`suspicious  flycheck-status-emoji-indicator-suspicious))))
 	  (list " "
 		(if (characterp pick)
 		    (string (flycheck-status-emoji--check pick))
