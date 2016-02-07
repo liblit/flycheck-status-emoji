@@ -1,10 +1,10 @@
 ;;; flycheck-status-emoji.el --- Show flycheck status using cute, compact emoji -*- lexical-binding: t -*-
 
-;; Copyright (C) 2015 Ben Liblit
+;; Copyright (C) 2015–2016 Ben Liblit
 
 ;; Author: Ben Liblit <liblit@acm.org>
 ;; Created: 13 Aug 2015
-;; Version: 1.1
+;; Version: 1.2.1
 ;; Package-Requires: ((emacs "24") (flycheck "0.20") (let-alist "1.0"))
 ;; Keywords: convenience languages tools
 ;; Homepage: https://github.com/liblit/flycheck-status-emoji
