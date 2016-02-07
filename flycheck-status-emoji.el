@@ -62,7 +62,7 @@
   :group 'flycheck-status-emoji
   :type 'character)
 
-(defcustom flycheck-status-emoji-indicator-finished-ok ?😟
+(defcustom flycheck-status-emoji-indicator-finished-ok ?😌
   "Shown when the current syntax check finished normally with no errors or warnings."
   :group 'flycheck-status-emoji
   :type 'character)
