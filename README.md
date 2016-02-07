@@ -71,5 +71,20 @@ from your preferred Linux distribution. For example, Fedora provides
 this font as the
 [`gdouros-symbola-fonts` package](http://fedoraproject.org/wiki/Gdouros_Symbola).
 
+After installing an emoji-covering font, you may also need to
+configure Emacs itself to use that font where appropriate. For the
+Symbola font recommended above, add the following to your Emacs
+start-up file:
+
+````elisp
+(set-fontset-font t nil "Symbola")
+````
+
+The Endless Parentheses blog has
+[additional advice on Emacs Unicode fallback font configuration](http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html). See
+also
+[Roland Walker’s unicode-fonts package](https://github.com/rolandwalker/unicode-fonts)
+for a more comprehensive approach to Emacs Unicode font management.
+
 <!-- LocalWords: Flycheck flycheck FlyC errored Milkypostman MELPA -->
 <!-- LocalWords: el RET GitHub init Symbola Douros gdouros symbola -->
