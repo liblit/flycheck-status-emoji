@@ -5,7 +5,7 @@
 ;; Author: Ben Liblit <liblit@acm.org>
 ;; Created: 13 Aug 2015
 ;; Version: 1.2.1
-;; Package-Requires: ((emacs "24") (flycheck "0.20") (let-alist "1.0"))
+;; Package-Requires: ((cl-lib "0.1") (emacs "24") (flycheck "0.20") (let-alist "1.0"))
 ;; Keywords: convenience languages tools
 ;; Homepage: https://github.com/liblit/flycheck-status-emoji
 
@@ -47,6 +47,7 @@
 ;;  dependencies
 ;;
 
+(require 'cl-lib)
 (require 'flycheck)
 
 (eval-when-compile (require 'let-alist))
@@ -145,8 +146,8 @@ cannot be displayed on the current frame,
 `flycheck-mode-line-status-text' is automatically used as a
 fallback."
   (or (catch 'flycheck-status-emoji--not-displayable
-	(let ((pick (pcase (or status flycheck-last-status-change)
-		      (`finished
+	(let ((pick (cl-ecase (or status flycheck-last-status-change)
+		      ('finished
 		       (if flycheck-current-errors
 			   (let-alist (flycheck-count-errors flycheck-current-errors)
 			     (concat
@@ -154,12 +155,12 @@ fallback."
 			      (when (and .error .warning) '(?/))
 			      (flycheck-status-emoji--face-count flycheck-status-emoji-indicator-finished-warning .warning)))
 			 flycheck-status-emoji-indicator-finished-ok))
-		      (`running     flycheck-status-emoji-indicator-running)
-		      (`no-checker  flycheck-status-emoji-indicator-no-checker)
-		      (`not-checked flycheck-status-emoji-indicator-not-checked)
-		      (`errored     flycheck-status-emoji-indicator-errored)
-		      (`interrupted flycheck-status-emoji-indicator-interrupted)
-		      (`suspicious  flycheck-status-emoji-indicator-suspicious))))
+		      ('running     flycheck-status-emoji-indicator-running)
+		      ('no-checker  flycheck-status-emoji-indicator-no-checker)
+		      ('not-checked flycheck-status-emoji-indicator-not-checked)
+		      ('errored     flycheck-status-emoji-indicator-errored)
+		      ('interrupted flycheck-status-emoji-indicator-interrupted)
+		      ('suspicious  flycheck-status-emoji-indicator-suspicious))))
 	  (list " "
 		(if (characterp pick)
 		    (string (flycheck-status-emoji--check pick))
