@@ -130,7 +130,7 @@ might return “😟2” for a COUNT of 2, but just “😟” for a COUNT of
 If the current frame cannot display the given CHARACTER, we throw
 an exception instead."
   (when count
-    (concat (list (flycheck-status-emoji--check character))
+    (concat `(,(flycheck-status-emoji--check character))
 	    (when (> count 1)
 	      (number-to-string count)))))
 
@@ -161,10 +161,10 @@ fallback."
 		      ('errored     flycheck-status-emoji-indicator-errored)
 		      ('interrupted flycheck-status-emoji-indicator-interrupted)
 		      ('suspicious  flycheck-status-emoji-indicator-suspicious))))
-	  (list " "
-		(if (characterp pick)
-		    (string (flycheck-status-emoji--check pick))
-		  pick))))
+	  `(" "
+	    ,(if (characterp pick)
+		 (string (flycheck-status-emoji--check pick))
+	       pick))))
       (flycheck-mode-line-status-text status)))
 
 
@@ -228,7 +228,7 @@ tracker.  This is the preferred reporting channel.  Otherwise,
 initiates (but does not send) e-mail to the package maintainer.
 Interactively, prompts for the method to use."
   (interactive
-   (list (y-or-n-p "Can you use a GitHub account for issue reporting? ")))
+   `(,(y-or-n-p "Can you use a GitHub account for issue reporting? ")))
   (if use-github
       (browse-url "https://github.com/liblit/flycheck-status-emoji/issues")
     (eval-when-compile (require 'reporter))
@@ -236,10 +236,10 @@ Interactively, prompts for the method to use."
       (reporter-submit-bug-report
        flycheck-status-emoji-maintainer-address
        (concat "flycheck-status-emoji.el " flycheck-status-emoji-version)
-       (list 'flycheck-current-errors
-	     'flycheck-last-status-change
-	     'flycheck-mode-line
-	     'flycheck-status-emoji-mode)))))
+       '(flycheck-current-errors
+	 flycheck-last-status-change
+	 flycheck-mode-line
+	 flycheck-status-emoji-mode)))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   
