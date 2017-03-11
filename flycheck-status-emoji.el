@@ -4,7 +4,7 @@
 
 ;; Author: Ben Liblit <liblit@acm.org>
 ;; Created: 13 Aug 2015
-;; Version: 1.2.1
+;; Version: 1.2.2
 ;; Package-Requires: ((cl-lib "0.1") (emacs "24") (flycheck "0.20") (let-alist "1.0"))
 ;; Keywords: convenience languages tools
 ;; Homepage: https://github.com/liblit/flycheck-status-emoji
@@ -215,7 +215,7 @@ or offer suggestions for improvement."
 ;;  bug reporting
 ;;
 
-(defconst flycheck-status-emoji-version "1.1"
+(defconst flycheck-status-emoji-version "1.2.2"
   "Package version number for use in bug reports.")
 
 (defconst flycheck-status-emoji-maintainer-address "Ben Liblit <liblit@acm.org>"
