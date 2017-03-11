@@ -1,6 +1,6 @@
 ;;; flycheck-status-emoji.el --- Show flycheck status using cute, compact emoji -*- lexical-binding: t -*-
 
-;; Copyright (C) 2015–2016 Ben Liblit
+;; Copyright (C) 2015–2017 Ben Liblit
 
 ;; Author: Ben Liblit <liblit@acm.org>
 ;; Created: 13 Aug 2015
