@@ -200,7 +200,6 @@ additional documentation.  Visit
 command `flycheck-status-emoji-submit-bug-report' to report bugs
 or offer suggestions for improvement."
   :global t
-  :package-version '(flycheck-status-emoji . "1.1")
   (progn
     (setq flycheck-mode-line
 	  (if flycheck-status-emoji-mode
