@@ -7,7 +7,7 @@
 ;; Version: 1.2.2
 ;; Package-Requires: ((cl-lib "0.1") (emacs "24") (flycheck "0.20") (let-alist "1.0"))
 ;; Keywords: convenience languages tools
-;; Homepage: https://github.com/liblit/flycheck-status-emoji
+;; URL: https://github.com/liblit/flycheck-status-emoji
 
 ;; This file is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -200,6 +200,7 @@ additional documentation.  Visit
 command `flycheck-status-emoji-submit-bug-report' to report bugs
 or offer suggestions for improvement."
   :global t
+  :require 'flycheck-status-emoji
   (progn
     (setq flycheck-mode-line
 	  (if flycheck-status-emoji-mode
