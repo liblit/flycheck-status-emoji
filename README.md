@@ -23,7 +23,7 @@ The current syntax check has errored. | `FlyC!` | `😵` | [Dizzy Face](http://e
 The current syntax check was interrupted. | `FlyC-` | `😲` | [Astonished Face](http://emojipedia.org/astonished-face/)
 The last syntax check had a suspicious result. | `FlyC?` | `😒` | [Unamused Face](http://emojipedia.org/unamused-face/)
 
-If errors or warnings are found, we abbreviate the <code>😱_e_/😟_w_</code>
+If errors or warnings are found, we abbreviate the `😱…/😟…`
 indicator smartly:
 
 * omit `😱0` entirely when there are no errors
