@@ -47,10 +47,11 @@
 ;;  dependencies
 ;;
 
-(require 'cl-lib)
 (require 'flycheck)
 
-(eval-when-compile (require 'let-alist))
+(eval-when-compile
+  (require 'cl-lib)
+  (require 'let-alist))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
