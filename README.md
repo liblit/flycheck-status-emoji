@@ -16,7 +16,7 @@ Status Description | Original Indicator | Emoji Indicator | Emoji Description
 :----------------- | :----------------: | :-------------: | :----------------
 A syntax check is now running in the current buffer. | `FlyC*` | `😔` | [Pensive Face](http://emojipedia.org/pensive-face/)
 The current syntax check finished normally with no errors or warnings. | `FlyC` | `😌` | [Relieved Face](http://emojipedia.org/relieved-face/)
-The current syntax check finished normally with three errors and five warnings. | `FlyC:3/5` | `😱3/😟5` | [Face Screaming In Fear](http://emojipedia.org/face-screaming-in-fear/), [Worried Face](http://emojipedia.org/worried-face/)
+The current syntax check finished normally with three errors, five warnings, and two informational messages. | `FlyC:3/5` | `😱3/😟5/💁2` | [Face Screaming In Fear](http://emojipedia.org/face-screaming-in-fear/), [Worried Face](http://emojipedia.org/worried-face/), [Information Desk Person](https://emojipedia.org/information-desk-person/)
 The current buffer was not checked. | `FlyC` | `😐` | [Neutral Face](http://emojipedia.org/neutral-face/)
 Automatic syntax checker selection did not find a suitable syntax checker. | `FlyC-` | `😶` | [Face Without Mouth](http://emojipedia.org/face-without-mouth/)
 The current syntax check has errored. | `FlyC!` | `😵` | [Dizzy Face](http://emojipedia.org/dizzy-face/)
