@@ -23,14 +23,6 @@ The current syntax check has errored. | `FlyC!` | `😵` | [Dizzy Face](http://e
 The current syntax check was interrupted. | `FlyC-` | `😲` | [Astonished Face](http://emojipedia.org/astonished-face/)
 The last syntax check had a suspicious result. | `FlyC?` | `😒` | [Unamused Face](http://emojipedia.org/unamused-face/)
 
-If errors or warnings are found, we abbreviate the <code>😱_e_/😟_w_</code>
-indicator smartly:
-
-* omit `😱0` entirely when there are no errors
-* omit `😟0` entirely when there are no warnings
-* show `😱` instead of `😱1` when there is exactly one error
-* show `😟` instead of `😟1` when there is exactly one warning
-
 Note: you may see multicolored icons for several of the emoji faces above. This is your browser’s doing. The actual Emacs package uses monochrome emoji, not colorful icons.
 
 ## Quick Start
